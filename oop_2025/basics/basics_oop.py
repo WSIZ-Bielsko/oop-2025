@@ -1,3 +1,5 @@
+import copy
+
 from pydantic import BaseModel
 
 
@@ -14,11 +16,17 @@ class Article(BaseModel):
 
 class Parcel:
 
-    def __init__(self):
+    def __init__(self, name='kadabra'):
+        # konstruktor
+        print('creating parcel')
         self.articles: list[Article] = []
+        self.name = name
 
-    def add_article(self, article: Article):
+    def add_article(self, article: Article):  # to jest "metoda"
         self.articles.append(article)
+
+    def get_articles(self) -> list[Article]:
+        return copy.deepcopy(self.articles)
 
     def remove_article(self, ean: str):
         idx = None
@@ -40,4 +48,10 @@ class Parcel:
 
 
 if __name__ == '__main__':
-    pass
+    p = Parcel(name='magic')
+    print('parcel created')
+    print(p.name)
+    p2 = Parcel(name='arctic')
+    print(f'{p2.name}')
+    p2.get_articles().append(3.1415)
+    print(p2.articles)
