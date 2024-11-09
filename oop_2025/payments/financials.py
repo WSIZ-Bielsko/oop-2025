@@ -43,12 +43,15 @@ class IBank(ABC):
 
 class SimpleBank(IBank):
 
-    def __init__(self):
-        pass
+    def __init__(self, default_currency="USD"):
+        self.default_currency = default_currency
+        self.accounts: dict[UUID, Account] = {}
 
     def create_account(self, user: User) -> Account:
-        # todo
-        pass
+        account = Account(account_id=uuid4(), owner_id=user.id, balance=0, currency=self.default_currency)
+        self.accounts[account.account_id] = account
+        return account
+
 
     def cash_transfer(self, account_id: UUID, amount: float, currency: str):
         # todo
