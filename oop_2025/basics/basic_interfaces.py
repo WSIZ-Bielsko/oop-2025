@@ -43,14 +43,12 @@ class Triangle(Shape):
         pass
 
     def area(self) -> float:
-        #todo
+        # todo
         pass
 
     def perimeter(self) -> float:
-        #todo
+        # todo
         pass
-
-
 
 
 class Trapezoid(Shape):
@@ -70,10 +68,45 @@ class Trapezoid(Shape):
         return perimeter
 
 
+class IBoxBounded(ABC):
+    @abstractmethod
+    def get_bounding_box(self) -> float:
+        pass
+
+
+class BoundedCircle(IBoxBounded, Circle):
+
+    def get_bounding_box(self) -> float:
+        return 0
+
+    def area(self) -> float:
+        return self.radius ** 2 * math.pi
+
+
+# Delegacja
+
+class DelegatingBoundedCircle(IBoxBounded, Circle):
+
+    def __init__(self, radius: float):
+        self.circle = Circle(radius)
+
+    def area(self) -> float:
+        return self.circle.area()
+
+    def perimeter(self) -> float:
+        return self.circle.perimeter()
+
+    def get_bounding_box(self) -> float:
+        return 0
+
 if __name__ == '__main__':
     sq = Square(5)
     # print(sq.area())
     # print(sq.perimeter())
 
-    t = Trapezoid(10, 10, 10)
-    print(t.a)
+    # t = Trapezoid(10, 10, 10)
+    # print(t.a)
+
+    c = BoundedCircle(radius=1)
+    print(c.get_bounding_box())
+    print(c.area())
