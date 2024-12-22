@@ -13,6 +13,9 @@ class Shape(ABC):
     def perimeter(self) -> float:
         pass
 
+    def say_it(self):
+        print("it")
+
 
 # Implement the interface
 class Square(Shape):
@@ -100,7 +103,9 @@ class DelegatingBoundedCircle(IBoxBounded, Circle):
         return 0
 
 if __name__ == '__main__':
-    sq = Square(5)
+    # s = QShape()
+
+    # sq = Square(5)
     # print(sq.area())
     # print(sq.perimeter())
 
@@ -108,5 +113,7 @@ if __name__ == '__main__':
     # print(t.a)
 
     c = BoundedCircle(radius=1)
+    c.say_it()
+    print(isinstance(c, Shape))
     print(c.get_bounding_box())
     print(c.area())

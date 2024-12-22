@@ -48,6 +48,7 @@ class Parcel:
 
 
 if __name__ == '__main__':
+    d = Dimension(height=1.1, width=2.2)
     p = Parcel(name='magic')
     print('parcel created')
     print(p.name)
