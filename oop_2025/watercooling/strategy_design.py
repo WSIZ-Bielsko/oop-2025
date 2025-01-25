@@ -14,7 +14,7 @@ class CoolingAlert(Enum):
 
 
 class CoolingData(BaseModel):
-    temps: list[float]
+    temps: list[float, ...] | tuple[float, ...]
     flow_rate: float = 1.0
     cpu_power: float = 4000  # in W or MHz
 
@@ -120,6 +120,10 @@ class ReferenceStrategy(Strategy):
             alerts.append(CoolingAlert.LOW_TEMPERATURE)
             desired_cpu_power = self.config.max_cpu_power
 
+        if self.flow_rate < self.config.min_flow_rate:
+            alerts.append(CoolingAlert.LOW_FLOW_RATE)
+            desired_cpu_power = self.config.min_cpu_power
+
         action = CoolingActions(desired_flow_rate=desired_flow_rate,
                                 desired_cpu_power=desired_cpu_power,
                                 alerts=alerts)
@@ -127,7 +131,7 @@ class ReferenceStrategy(Strategy):
 
 
 def test_easy():
-    data = CoolingData(temps=[20], flow_rate=0.5, cpu_power=0.5)
+    data = CoolingData(temps=[20.], flow_rate=0.5, cpu_power=0.5)
 
 
 def test_challenge1():

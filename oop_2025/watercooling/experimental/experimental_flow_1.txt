@@ -1,0 +1,5 @@
+# command: cat /dev/ttyUSB0
+
+Flow rate: 2.45 L/min
+Output Liquid Quantity: 245 mL
+        0.245 L

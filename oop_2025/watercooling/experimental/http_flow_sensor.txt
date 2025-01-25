@@ -1,0 +1,21 @@
+
+
+{
+  "timestamp": "2025-01-25T11:00:00Z",
+  "sensor_id": "flow_sensor_01",
+  "data": {
+    "flow_rate": {
+      "value": 12.5,
+      "unit": "L/min"
+    },
+    "temperature": {
+      "value": 22.3,
+      "unit": "C"
+    },
+    "total_volume": {
+      "value": 150.0,
+      "unit": "L"
+    }
+  },
+  "status": "OK"
+}
