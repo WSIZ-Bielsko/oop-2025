@@ -38,12 +38,26 @@ class DummyFlowSensor(FlowSensor):
 
 
 class EnhancedSimpleThermo(SimpleThermo):
+
+    def __init__(self):
+        super().__init__()
+        self.previous_reading = None
+
     def get_temperatures(self) -> list[float]:
         temps = super().get_temperatures()
-        result = []
-        for t in temps:
-            result.append(t % 255)
-        return result
+        assert len(temps) == 1  # we assume the underlying Sensor returns 1 temperature only
+        temp = temps[0]
+        if not self.previous_reading:
+            self.previous_reading = temp
+        selected_temp = temp
+        delta = abs(temp - self.previous_reading)
+        for i in range(-10, 11):
+            candidate_temp = temp - i * 256
+            if abs(candidate_temp - self.previous_reading) < delta:
+                delta = abs(candidate_temp - self.previous_reading)
+                selected_temp = candidate_temp
+        self.previous_reading = selected_temp
+        return [selected_temp]
 
 
 def test_enhancement0():

@@ -55,4 +55,3 @@ if __name__ == '__main__':
     strategy = ReferenceStrategy()
     controller = WaterCoolingController(strategy)
 
-    controller.att
