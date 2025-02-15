@@ -1,0 +1,72 @@
+mlx5-pci-0500
+Adapter: PCI adapter
+sensor0:      +39.0°C  (crit = +105.0°C, highest = +42.0°C)
+
+nvme-pci-2100
+Adapter: PCI adapter
+Composite:    +32.9°C  (low  =  -0.1°C, high = +86.8°C)
+                       (crit = +88.8°C)
+
+k10temp-pci-00c3
+Adapter: PCI adapter
+Tctl:         +51.0°C
+Tccd1:        +37.1°C
+Tccd2:        +37.0°C
+Tccd3:        +37.5°C
+Tccd4:        +38.1°C
+Tccd5:        +36.6°C
+Tccd6:        +36.2°C
+Tccd7:        +36.0°C
+Tccd8:        +36.6°C
+
+nvme-pci-1100
+Adapter: PCI adapter
+Composite:    +29.9°C  (low  =  -0.1°C, high = +86.8°C)
+                       (crit = +88.8°C)
+
+nvme-pci-9500
+Adapter: PCI adapter
+Composite:    +27.9°C  (low  =  -0.1°C, high = +86.8°C)
+                       (crit = +88.8°C)
+
+nvme-pci-8900
+Adapter: PCI adapter
+Composite:    +31.9°C  (low  =  -0.1°C, high = +86.8°C)
+                       (crit = +88.8°C)
+
+mlx5-pci-0501
+Adapter: PCI adapter
+sensor0:      +38.0°C  (crit = +105.0°C, highest = +42.0°C)
+Module1:      +32.0°C  (crit = +70.0°C, highest = +33.0°C)
+
+i350bb-pci-6500
+Adapter: PCI adapter
+loc1:         +38.0°C  (high = +120.0°C, crit = +110.0°C)
+
+k10temp-pci-00cb
+Adapter: PCI adapter
+Tctl:         +53.4°C
+Tccd1:        +39.6°C
+Tccd2:        +39.4°C
+Tccd3:        +38.8°C
+Tccd4:        +39.5°C
+Tccd5:        +37.9°C
+Tccd6:        +37.9°C
+Tccd7:        +38.0°C
+Tccd8:        +37.6°C
+
+nvme-pci-1400
+Adapter: PCI adapter
+Composite:    +30.9°C  (low  =  -0.1°C, high = +86.8°C)
+                       (crit = +88.8°C)
+
+nvme-pci-1500
+Adapter: PCI adapter
+Composite:    +35.9°C  (low  =  -0.1°C, high = +86.8°C)
+                       (crit = +88.8°C)
+
+nvme-pci-9400
+Adapter: PCI adapter
+Composite:    +30.9°C  (low  =  -0.1°C, high = +86.8°C)
+                       (crit = +88.8°C)
+
